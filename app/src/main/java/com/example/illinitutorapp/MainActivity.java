@@ -2,6 +2,7 @@ package com.example.illinitutorapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -17,7 +18,13 @@ public class MainActivity extends AppCompatActivity {
         Button tutButton = findViewById(R.id.tutorButton);
         Button infoButton = findViewById(R.id.infoButton);
         stuButton.setOnClickListener(args -> {
-            System.out.println();
+            startActivity(new Intent(this, StudentRequest.class));
+        });
+        tutButton.setOnClickListener(args -> {
+            startActivity(new Intent(this, RequestList.class));
+        });
+        infoButton.setOnClickListener(args -> {
+            startActivity(new Intent(this, InfoScreen.class));
         });
     }
 }
