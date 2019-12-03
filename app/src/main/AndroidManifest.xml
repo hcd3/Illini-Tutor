@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RequestList"></activity>
+        <activity android:name=".RequestForm"></activity>
+        <activity android:name=".StudentRequest"></activity>
+        <activity android:name=".InfoScreen"></activity>
     </application>
 
 </manifest>

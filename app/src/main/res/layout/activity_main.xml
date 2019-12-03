@@ -6,41 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <Button
+        android:id="@+id/studentButton"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="475dp"
-        android:layout_marginBottom="50dp"
-        android:divider="@drawable/ic_launcher_background"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:paddingBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:text="Find Your Tutor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FF4800"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="20dp" />
 
-        <Button
-            android:id="@+id/studentButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Find Your Tutor"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FF4800" />
+    <Button
+        android:id="@+id/tutorButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:text="I'm a Tutor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#021BF8"
+        android:textColorHighlight="#00FF0000"
+        app:layout_constraintBottom_toTopOf="@+id/infoButton"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="20dp" />
 
-        <Button
-            android:id="@+id/tutorButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="I'm a Tutor"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#021BF8"
-            android:textColorHighlight="#00FF0000" />
-
-        <Button
-            android:id="@+id/infoButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Info"
-            android:textColor="#000000" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/infoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="490dp"
+        android:text="Info"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

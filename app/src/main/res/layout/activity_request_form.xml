@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="Phone Number:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="Class:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="135dp"
+        android:text="Location:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="Date and Time (Ex: 09/18/2019 4:00pm):"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="225dp"
+        android:text="# of users:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userOpen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270dp"
+        android:text="Open/Closed:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/createRequest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="405dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:text="Create Request"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

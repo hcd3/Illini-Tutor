@@ -14,7 +14,7 @@ public class StudentRequest extends AppCompatActivity {
         Button createNew = findViewById(R.id.createNew);
         Button joinExisting = findViewById(R.id.joinExisting);
         createNew.setOnClickListener(args -> {
-            startActivity(new Intent(this, StudentRequest.class));
+            startActivity(new Intent(this, RequestForm.class));
         });
         joinExisting.setOnClickListener(args -> {
             startActivity(new Intent(this, RequestList.class));
