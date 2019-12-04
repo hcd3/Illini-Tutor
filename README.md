@@ -11,4 +11,5 @@ The second button also takes tutors straight to the list of current tutoring req
 
 The third button is quite self-explanatory and redirects users to a page explaining the development of the app as well as how they can use it.
 
+By creating this app, we hoped to develop our personal Computer Science skills as well as satisfy an unfulfilled need on campus.
 
