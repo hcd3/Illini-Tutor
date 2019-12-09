@@ -53,18 +53,10 @@ public class RequestForm extends AppCompatActivity {
         while (result.moveToNext()) {
             JsonObject request = new JsonObject();
             // Adds Personal info to JsonObject
-            String[] personalArray = result.getString(1).split(",");
-            request.addProperty("name", personalArray[0]);
-            request.addProperty("Phone Number", personalArray[1]);
-            request.addProperty("Course", personalArray[2]);
-            request.addProperty("Location", personalArray[3]);
+            request.addProperty("Personal Info", result.getString(1));
 
             // Adds Session info to JsonObject
-            String[] sessionArray = result.getString(2).split(",");
-            request.addProperty("Date", sessionArray[0]);
-            request.addProperty("Time", sessionArray[1]);
-            request.addProperty("Number of People", sessionArray[2]);
-            request.addProperty("Open/Closed", sessionArray[3]);
+            request.addProperty("Session Info", result.getString(2));
 
             // Adds complete request
             requests.add(request);
