@@ -16,13 +16,13 @@
         android:layout_marginRight="15dp"
         android:text="Name, Phone Number, Course, Location:"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/userName"
+        app:layout_constraintEnd_toStartOf="@+id/userPersonalInfo"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/userName"
+        android:id="@+id/userPersonalInfo"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="70dp"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/userPhoneNumber"
+        android:id="@+id/userSessionInfo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="205dp"

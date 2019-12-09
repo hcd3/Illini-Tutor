@@ -1,6 +1,7 @@
 package com.example.illinitutorapp;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -8,8 +9,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
 public class RequestForm extends AppCompatActivity {
-    DatabaseHelper myDb;
+    static DatabaseHelper myDb;
     Button createRequest, goToList;
     EditText name, phoneNumber;
     @Override
@@ -20,8 +24,8 @@ public class RequestForm extends AppCompatActivity {
 
         createRequest = findViewById(R.id.createRequest);
         goToList = findViewById(R.id.goToList);
-        name = findViewById(R.id.userName);
-        phoneNumber = findViewById(R.id.userPhoneNumber);
+        name = findViewById(R.id.userPersonalInfo);
+        phoneNumber = findViewById(R.id.userSessionInfo);
         createRequest.setOnClickListener(args -> {
             addData();
         });
@@ -38,5 +42,33 @@ public class RequestForm extends AppCompatActivity {
         }
         name.setText("");
         phoneNumber.setText("");
+    }
+    public static JsonArray viewAll() {
+        Cursor result = myDb.getAllData();
+        if (result.getCount() == 0) {
+            return null;
+        }
+        // Array to hold all requests
+        JsonArray requests = new JsonArray();
+        while (result.moveToNext()) {
+            JsonObject request = new JsonObject();
+            // Adds Personal info to JsonObject
+            String[] personalArray = result.getString(1).split(",");
+            request.addProperty("name", personalArray[0]);
+            request.addProperty("Phone Number", personalArray[1]);
+            request.addProperty("Course", personalArray[2]);
+            request.addProperty("Location", personalArray[3]);
+
+            // Adds Session info to JsonObject
+            String[] sessionArray = result.getString(2).split(",");
+            request.addProperty("Date", sessionArray[0]);
+            request.addProperty("Time", sessionArray[1]);
+            request.addProperty("Number of People", sessionArray[2]);
+            request.addProperty("Open/Closed", sessionArray[3]);
+
+            // Adds complete request
+            requests.add(request);
+        }
+        return requests;
     }
 }
