@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+// Adding a comment for later documentation
 public class StudentRequest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
