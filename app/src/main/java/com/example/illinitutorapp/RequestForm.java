@@ -14,6 +14,7 @@ import com.google.gson.JsonObject;
 
 public class RequestForm extends AppCompatActivity {
     static DatabaseHelper myDb;
+    public static int counter = 0;
     Button createRequest, goToList;
     EditText name, phoneNumber;
     @Override
@@ -32,6 +33,10 @@ public class RequestForm extends AppCompatActivity {
         goToList.setOnClickListener(args -> {
             startActivity(new Intent(this, RequestList.class));
         });
+        if (counter == 0) {
+            counter++;
+            startActivity(new Intent(this, MainActivity.class));
+        }
     }
     public void addData() {
         boolean isInserted = myDb.insertData(name.getText().toString(), phoneNumber.getText().toString());
@@ -50,17 +55,19 @@ public class RequestForm extends AppCompatActivity {
         }
         // Array to hold all requests
         JsonArray requests = new JsonArray();
-        while (result.moveToNext()) {
+        for (int i = 0; i < result.getCount(); i++) {
+            result.moveToNext();
             JsonObject request = new JsonObject();
             // Adds Personal info to JsonObject
-            request.addProperty("Personal Info", result.getString(1));
+            request.addProperty("Personal_Info", result.getString(1));
 
             // Adds Session info to JsonObject
-            request.addProperty("Session Info", result.getString(2));
+            request.addProperty("Session_Info", result.getString(2));
 
             // Adds complete request
             requests.add(request);
         }
+        result.close();
         return requests;
     }
 }
