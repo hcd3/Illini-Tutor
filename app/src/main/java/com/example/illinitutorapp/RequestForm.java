@@ -33,10 +33,11 @@ public class RequestForm extends AppCompatActivity {
         goToList.setOnClickListener(args -> {
             startActivity(new Intent(this, RequestList.class));
         });
+        /**
         if (counter == 0) {
             counter++;
             startActivity(new Intent(this, MainActivity.class));
-        }
+        }*/
     }
     public void addData() {
         boolean isInserted = myDb.insertData(name.getText().toString(), phoneNumber.getText().toString());
@@ -69,5 +70,9 @@ public class RequestForm extends AppCompatActivity {
         }
         result.close();
         return requests;
+    }
+    public static void deleteData(int id) {
+        String str = Integer.toString(id);
+        myDb.deleteData(str);
     }
 }

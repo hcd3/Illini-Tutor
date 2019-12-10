@@ -6,7 +6,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-// Adding a comment for later documentation
 public class StudentRequest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +13,7 @@ public class StudentRequest extends AppCompatActivity {
         setContentView(R.layout.activity_student_request);
         Button createNew = findViewById(R.id.createNew);
         Button joinExisting = findViewById(R.id.joinExisting);
+        // On-click Listeners
         createNew.setOnClickListener(args -> {
             startActivity(new Intent(this, RequestForm.class));
         });

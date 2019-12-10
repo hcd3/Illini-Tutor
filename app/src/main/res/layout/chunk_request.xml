@@ -15,7 +15,7 @@
     <TextView
         android:id="@+id/personalInfo"
         android:layout_width="290dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginStart="120dp"
         android:layout_marginLeft="120dp"
         android:text="personalInfo"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
         android:layout_marginLeft="120dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="sessionInfo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

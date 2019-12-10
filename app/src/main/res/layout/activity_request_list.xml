@@ -7,25 +7,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/requestList0"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:text="Requests:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/requestList5"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Requests:" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/requestList1"
+        android:id="@+id/requestList6"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="80dp"
         android:layout_marginTop="100dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,9 +38,22 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/requestList2"
+        android:id="@+id/requestList7"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="180dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="100dp"></LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/requestList8"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="260dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

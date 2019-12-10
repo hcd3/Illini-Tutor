@@ -14,10 +14,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (counter == 0) {
+        /**if (counter == 0) {
             counter++;
             startActivity(new Intent(this, RequestForm.class));
-        }
+        }*/
         // 3 buttons to go to
         Button stuButton = findViewById(R.id.studentButton);
         Button tutButton = findViewById(R.id.tutorButton);

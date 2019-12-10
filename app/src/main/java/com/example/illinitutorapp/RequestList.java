@@ -1,11 +1,13 @@
 package com.example.illinitutorapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.JsonArray;
@@ -22,16 +24,13 @@ public class RequestList extends AppCompatActivity {
         if (requests == null) {
             return;
         }
-        LinearLayout requestList0 = findViewById(R.id.requestList0);
-        LinearLayout requestList1 = findViewById(R.id.requestList1);
-        LinearLayout requestList2 = findViewById(R.id.requestList2);
-        /*LinearLayout requestList3 = findViewById(R.id.requestList3);
-        LinearLayout requestList4 = findViewById(R.id.requestList4);
-        LinearLayout requestList5 = findViewById(R.id.requestList5);*/
-        LinearLayout[] reqArray = {requestList0, requestList1, requestList2};//, requestList3, requestList4,
-            // requestList5};
+        LinearLayout requestList5 = findViewById(R.id.requestList5);
+        LinearLayout requestList6 = findViewById(R.id.requestList6);
+        LinearLayout requestList7 = findViewById(R.id.requestList7);
+        LinearLayout requestList8 = findViewById(R.id.requestList8);
+        LinearLayout[] reqArray = {requestList8, requestList7, requestList6, requestList5};
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 3; i >= 0; i--) {
             JsonObject request = requests.get(i).getAsJsonObject();
             View requestChunk = getLayoutInflater().inflate(R.layout.chunk_request,
                     reqArray[i], false);
@@ -43,8 +42,18 @@ public class RequestList extends AppCompatActivity {
             personalInfo.setText(request.get("Personal_Info").getAsString());
             sessionInfo.setText(request.get("Session_Info").getAsString());
             // Adds button functionality
+            final int y = i;
             acceptRequest.setOnClickListener(args -> {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setCancelable(true);
+                builder.setTitle("Contact your student!");
+                builder.setMessage(request.get("Personal_Info").getAsString() + " " +
+                        request.get("Session_info").getAsString());
+                builder.show();
                 // Remove request
+                RequestForm.deleteData(y);
+                // Updates list
+                startActivity(new Intent(this, RequestForm.class));
             });
             // Final step: adds info
             reqArray[i].addView(requestChunk);
