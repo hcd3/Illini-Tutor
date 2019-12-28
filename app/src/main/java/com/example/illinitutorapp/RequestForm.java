@@ -33,11 +33,10 @@ public class RequestForm extends AppCompatActivity {
         goToList.setOnClickListener(args -> {
             startActivity(new Intent(this, RequestList.class));
         });
-        /**
         if (counter == 0) {
             counter++;
             startActivity(new Intent(this, MainActivity.class));
-        }*/
+        }
     }
     public void addData() {
         boolean isInserted = myDb.insertData(name.getText().toString(), phoneNumber.getText().toString());
@@ -59,6 +58,8 @@ public class RequestForm extends AppCompatActivity {
         for (int i = 0; i < result.getCount(); i++) {
             result.moveToNext();
             JsonObject request = new JsonObject();
+            // Adds id tag for each entry
+            request.addProperty("Id", i);
             // Adds Personal info to JsonObject
             request.addProperty("Personal_Info", result.getString(1));
 
